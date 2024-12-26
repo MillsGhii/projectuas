@@ -120,7 +120,7 @@ const styles = StyleSheet.create({
         fontWeight: 'bold',
     },
     videogamesList: {
-        paddingTop: 50,
+        paddingTop: 45,
         paddingHorizontal: 20,
     },
     videogamesItem: {
