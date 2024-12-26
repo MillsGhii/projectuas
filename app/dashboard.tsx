@@ -7,10 +7,17 @@ export default function Dashboard() {
     const [userData, setUserData] = useState({ name: '', email: '' });
     const router = useRouter();
 
-    const movies = [
-        { id: '1', title: 'Red Dead Redemption 2', year: '2018', poster: 'https://via.placeholder.com/150' },
-        { id: '2', title: 'The Last Of Us', year: '2013', poster: 'https://via.placeholder.com/150' },
-        { id: '3', title: 'Silent Hill 2', year: '2001', poster: 'https://via.placeholder.com/150' },
+    const videogames = [
+        { id: '1', title: 'Red Dead Redemption 2', year: '2018', poster: require('./assets/images/rdr2.jpg') },
+        { id: '2', title: 'The Last Of Us', year: '2013', poster: require('./assets/images/tlou1.jpg') },
+        { id: '3', title: 'Silent Hill 2', year: '2001', poster: require('./assets/images/sh2.jpg') },
+        { id: '4', title: 'The Witcher 3', year: '2015', poster: require('./assets/images/tw3.jpg') },
+        { id: '5', title: 'Uncharted 4', year: '2016', poster: require('./assets/images/unch.jpg') },
+        { id: '6', title: 'God Of War', year: '2018', poster: require('./assets/images/gow.jpg') },
+        { id: '7', title: 'Elden Ring', year: '2022', poster: require('./assets/images/eldenring.jpg') },
+        { id: '8', title: 'Grand Theft Auto V', year: '2013', poster: require('./assets/images/gtav.jpg') },
+        { id: '9', title: 'Ghost Of Tsushima', year: '2020', poster: require('./assets/images/GoT.jpg') },
+        { id: '10', title: 'The Legend Of Zelda : BOTW', year: '2017', poster: require('./assets/images/zelda.jpg') },
     ];
 
     useEffect(() => {
@@ -49,9 +56,9 @@ export default function Dashboard() {
         }
     };
 
-    const renderMovie = ({ item }) => (
+    const renderVideogames = ({ item }) => (
         <View style={styles.videogamesItem}>
-            <Image source={{ uri: item.poster }} style={styles.videogamesPoster} />
+            <Image source={ item.poster } style={styles.videogamesPoster} />
             <View style={styles.videogamesDetails}>
                 <Text style={styles.videogamesTitle}>{item.title}</Text>
                 <Text style={styles.videogamesYear}>{item.year}</Text>
@@ -69,8 +76,8 @@ export default function Dashboard() {
             <Text style={styles.heading}>Best Videogames of All Time</Text>
 
             <FlatList
-                data={movies}
-                renderItem={renderMovie}
+                data={videogames}
+                renderItem={renderVideogames}
                 keyExtractor={(item) => item.id}
                 contentContainerStyle={styles.videogamesList}
             />
